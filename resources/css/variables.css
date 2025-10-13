@@ -1,0 +1,27 @@
+:root {
+    /* Background */
+    --container-bg: #FFD93D;
+    --header-bg: #FFD93D;
+    --nav-bg: #517878;
+    --transpBox-bg: #FFD93D;
+    --whiteBox-bg: #ffffff;
+    --butterYellow-bg: #ffffff;
+    --yellowProgressBarText-bg: #FFDB68;
+    --progressBar-bg: #326E6C;
+    --hover-bg: #537a79;
+    --greenBox-bg: #326e6c;
+    --light-teal_bg: #4a7c7c;
+    --mini-ref-bg: #feedb7;
+    --quiz-bg: #feedb7;
+    --border-teal: #326e6c;
+    --light-butter-g: #faf2e7;
+
+
+
+    /* Text Color */
+    --title-text: #326E6C;
+    --text-color-green: #326E6C;
+    --whiteBox-text: #212121;
+    --greenBox-text: #FFFFFF;
+    --transpBox-text: #3b3b3b;
+}

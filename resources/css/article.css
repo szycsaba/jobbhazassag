@@ -1,0 +1,256 @@
+@import url(../css/fonts.css);
+@import url(../css/variables.css);
+
+
+body{
+    box-sizing: border-box;
+}
+
+.header-bg {
+    position: relative;
+    background-color: var(--header-bg);
+}
+
+.container-bg,
+footer {
+    background-color: var(--container-bg);
+}
+
+.navMenu {
+    position: fixed;
+    background-color: var(--nav-bg);
+    top: 0;
+    right: 0;
+    padding: 0.7rem;
+    height: 100%;
+    width: 15rem;
+    z-index: 50;
+    border-left: 0.5rem solid #ffffff;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.navMenu ul {
+    margin-top: 1.5rem;
+}
+
+.navMenu li {
+    list-style: none;
+}
+
+.navMenu ul li a {
+    font-family: "Bona Nova", serif;
+    /*font-size: 1.5rem;*/
+    font-weight: 600;
+    text-align: center;
+}
+
+#menuBurger {
+    font-size: 2.5rem;
+    padding-right: 2rem;
+    border-radius: 50%;
+    right: 0;
+}
+
+#backArrow,
+#imgProfile {
+    font-size: 2.5rem;
+}
+
+.title, .subtitle, .articleSubtitle, .solutionBox h5{
+    font-family: "Bona Nova", serif;
+    color: var(--title-text);
+}
+
+.title {
+    font-size: 5.2rem;
+    line-height: normal;
+
+}
+
+.subtitle,
+.articleSubtitleMini {
+    font-size: 2rem;
+    line-height: 38px;
+    font-family: "Bona Nova", serif;
+    color: var(--title-text);
+}
+
+.articleSubtitle {
+    font-size: 3.5rem;
+}
+
+.whiteBox {
+    background-color: var(--whiteBox-bg);
+    color: var(--whiteBox-text);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f5f1eb;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: left;
+    font-size: 1.2rem;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 32px;
+    /*font-weight: 300;*/
+}
+
+.fontSans{
+    font-family: "Noto Sans", sans-serif;
+
+}
+
+.section {
+    max-width: 800px;
+    margin: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0;
+    padding-bottom: 2rem;
+}
+
+.greenBox {
+    /*background-color: var(--greenBox-bg);*/
+    background: linear-gradient(135deg,var(--greenBox-bg) 0%, var(--light-teal_bg) 100%);
+    color: var(--greenBox-text);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: left;
+    font-size: 1.2rem;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 32px;
+    /*font-weight: 300;*/
+}
+
+.transpBox {
+    background-color: var(--transpBox-bg);
+    color: var(--transpBox-text);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: left;
+    font-size: 1.2rem;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 32px;
+    /*font-weight: 300;*/
+}
+
+.solutionBox {
+    background-color: var(--whiteBox-bg);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 32px;
+}
+
+.solutionBox h5 {
+    font-size: 2rem;
+}
+
+.quizBox, .emailBox{
+    background-color: var(--light-butter-g);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mini-reflection{
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f5f1eb;
+    opacity: 1;
+    transition: opacity 0.8s, transform 0.8s;
+    
+}
+
+.option button, .inpArea{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--border-teal);
+}
+
+#bulbIcon,
+#handshakeIcon,
+#clockIcon {
+    font-size: 2.5rem;
+}
+
+.btn-mini-ref{
+    font-family: "Noto Sans", sans-serif;
+}
+
+.question{
+    font-family: "Bono";
+}
+
+.answerBox{
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#myInput{
+    position: relative;
+}
+
+#myBtn{
+    position: absolute;
+    border: 0;
+    border-radius: 4px;
+    padding: 7px 10px;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 90%;
+}
+
+
+
+/*mobile*/
+@media screen and (max-width: 479px) {
+    .section {
+        padding: 0.4rem;
+        max-width: 390px;
+    }
+    #menuBurger {
+        padding-right: 1rem;
+    }
+
+    .whiteBox,.greenBox,.transpBox,.solutionBox{
+        padding: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .quizBox, .emailBox{
+        padding: 0.5rem;
+        font-size: 1.25rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+    }
+
+    .articleSubtitle {
+        font-size: 1.5rem;
+    }
+
+    .solutionBox h5 {
+        font-size: 1.5rem;
+    }
+
+    .question{
+        font-size: 1.5rem;
+    }
+}

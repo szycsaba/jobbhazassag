@@ -1,0 +1,42 @@
+
+/*title, subtitle*/
+@font-face {
+    font-family: Cormorant;
+    src: url(../fonts/CormorantGaramond-Regular.ttf);
+}
+@font-face {
+    font-family: CormorantLight;
+    src: url(../fonts/CormorantGaramond-Light.ttf);
+}
+
+@font-face {
+    font-family: CormorantMedium;
+    src: url(../fonts/CormorantGaramond-Medium.ttf);
+}
+
+
+/*boxes fonts*/
+@font-face {
+    font-family: Merriweather;
+    src: url(../fonts/Merriweather_24pt_SemiCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherLight;
+    src: url(../fonts/Merriweather_24pt-Light.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherMedium;
+    src: url(../fonts/Merriweather_24pt-Medium.ttf);
+}
+
+@font-face {
+    font-family: NotoSansRegular;
+    src: url(../fonts/NotoSans_Condensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: BonaNovaRegular;
+    src: url(../fonts/BonaNova-Regular.ttf);
+}
