@@ -16,6 +16,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'subscriber.access' => \App\Http\Middleware\CheckSubscriberAccess::class,
         ]);
         
+        // Keep web group minimal; no global cookie/host/relay middlewares
+        
         // Exclude webhook routes from CSRF protection
         $middleware->validateCsrfTokens(except: [
             'stripe/webhook',

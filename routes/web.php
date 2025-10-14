@@ -19,7 +19,9 @@ Route::get('/', function () { return view('public.index');})->name('home');
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle']);
 Route::get('thank-you/{session_id}', [ThankYouController::class, 'show'])->name('thank-you');
 Route::post('/invite', [InviteController::class, 'store'])->name('invite.store');
-Route::get('/article/{slug}', [ArticleController::class, 'show'])->middleware('subscriber.access')->name('article.show');
+Route::middleware([\App\Http\Middleware\GoogleSsoRelay::class, 'subscriber.access'])
+    ->get('/article/{slug}', [ArticleController::class, 'show'])
+    ->name('article.show');
 Route::get('/onboarding', [OnboardingController::class, 'index'])->name('onboarding');
 Route::get('/subscriber-warning', function () { return view('public.subscriber-warning'); })->name('subscriber.warning');
 Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle'])->name('redirect.google');

@@ -135,6 +135,15 @@ return [
             'replace_placeholders' => true,
         ],
 
+        'google' => [
+            'driver' => 'daily',
+            // Results in files like google-YYYY-MM-DD.log
+            'path' => storage_path('logs/google.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => env('LOG_DAILY_DAYS', 14),
+            'replace_placeholders' => true,
+        ],
+
     ],
 
 ];

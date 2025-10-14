@@ -23,21 +23,33 @@ class CheckSubscriberAccess
             $intendedUrl = $request->fullUrl();
             session()->put('url.intended', $intendedUrl);
             
+            \Log::channel('google')->info('SubscriberAccess: not authenticated, redirecting to warning', [
+                'intended' => $intendedUrl,
+                'session_id' => session()->getId(),
+                'host' => $request->getHost(),
+            ]);
             return redirect()->route('subscriber.warning');
         }
 
         $user = Auth::guard('google')->user();
         
-        // Check if user has an active subscription
         $subscriber = Subscriber::where('email', $user->email)
             ->where('payment_status', 'paid')
             ->where('status', 'active')
             ->first();
 
         if (!$subscriber) {
+            \Log::channel('google')->info('SubscriberAccess: user authenticated but no active subscription', [
+                'email' => $user->email,
+                'session_id' => session()->getId(),
+            ]);
             return redirect()->route('subscriber.warning');
         }
 
+        \Log::channel('google')->info('SubscriberAccess: access granted', [
+            'email' => $user->email,
+            'session_id' => session()->getId(),
+        ]);
         return $next($request);
     }
 }
