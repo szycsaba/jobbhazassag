@@ -19,20 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Show loading toast
-                    Swal.fire({
-                        title: 'Kijelentkezés...',
-                        text: 'Kiszerelés folyamatban...',
-                        icon: 'info',
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 1500,
-                        timerProgressBar: true,
-                        allowOutsideClick: false
-                    });
-                    
-                    // Make AJAX request to logout
+                    // Make AJAX request to logout immediately
                     fetch('/auth/google/logout', {
                         method: 'POST',
                         headers: {
@@ -43,34 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        // Show success toast
-                        Swal.fire({
-                            title: 'Sikeres kijelentkezés!',
-                            text: 'Sikeresen kijelentkezett a fiókjából.',
-                            icon: 'success',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 2000,
-                            timerProgressBar: true
-                        }).then(() => {
-                            // Redirect to onboarding after toast disappears
-                            window.location.href = '/onboarding';
-                        });
+                        // Immediately redirect to onboarding without waiting for toast
+                        // Use replace to prevent back button from showing cached article page
+                        // Add timestamp to prevent any caching issues
+                        const timestamp = Date.now();
+                        window.location.replace(`/onboarding?t=${timestamp}`);
                     })
                     .catch(error => {
                         console.error('Logout error:', error);
-                        // Show error toast
-                        Swal.fire({
-                            title: 'Hiba!',
-                            text: 'Hiba történt a kijelentkezés során. Kérjük, próbálja újra.',
-                            icon: 'error',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true
-                        });
+                        // Even on error, redirect to onboarding
+                        const timestamp = Date.now();
+                        window.location.replace(`/onboarding?t=${timestamp}`);
                     });
                 }
             });

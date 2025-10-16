@@ -102,7 +102,10 @@ class ArticleController extends Controller
         ]);
         
         // Add previous articles (exclude current article)
-        $previousArticles = Article::where('id', '<', $article->id)
+        // Get current article's created_at for comparison
+        $currentArticleCreatedAt = $article->created_at;
+        
+        $previousArticles = Article::where('created_at', '<', $currentArticleCreatedAt)
             ->orderBy('created_at', 'asc')
             ->get(['id', 'title', 'slug', 'created_at'])
             ->map(function($article) {
